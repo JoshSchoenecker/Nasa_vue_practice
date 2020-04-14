@@ -1,13 +1,13 @@
 <template>
- <div class="apod col-6">
-  <h3 class="text-center"> Nasa APOD </h3>
-  
+ <div class="apod apodSection col-6">
+  <h1> NASA APOD </h1>
   <hr>
-  
+  <ApodDetails :apodData="apod"></ApodDetails>
  </div>
 </template>
 
 <script>
+ import ApodDetails from './ApodDetails.vue'
  export default {
   name: 'apod',
   data(){
@@ -25,14 +25,20 @@
   created(){
    this.$store.dispatch("getApod")
   },
-  
-  methods: {}
+
+  methods: {},
+  components: {
+   ApodDetails
+  }
  }
 </script>
 
 <style>
-.apod {
-    outline: 1px solid black;
+.apodSection {
+    margin-left: 1rem;
+    margin-right: 1rem;
+    border: 1px solid black;
     padding: .2rem;
+    box-shadow: 3px 3px 10px 3px black;
 }
 </style>

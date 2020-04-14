@@ -11,7 +11,7 @@ let _api = axios.create({
 
 export default new Vuex.Store({
   state: {
-   apod: {}
+   apod: []
   },
   mutations: {
    async setApod(state, apod){
